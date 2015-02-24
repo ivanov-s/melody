@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>mp3/Fail.mp3</file>
+        <file>mp3/Success.mp3</file>
+    </qresource>
+</RCC>
