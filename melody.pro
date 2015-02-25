@@ -13,11 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    gamewindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    gamewindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    gamewindow.ui
 
-RESOURCES += \
-    mp3.qrc
+RESOURCES += mp3.qrc
