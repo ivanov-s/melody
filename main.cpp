@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     // Окно администратора
     MainWindow w;
-    w.setWindowTitle("Name That Tune!");
+    w.setWindowTitle("Угадай мелодию");
     w.show();
 
     // Окно с игрой
@@ -24,20 +24,13 @@ int main(int argc, char *argv[])
     w2.setWindowTitle("Угадай мелодию");
     w2.show();
 
+    QObject::connect(&w, SIGNAL(mysignal(QString)), &w2 ,SLOT(myslot(QString)));
+    QObject::connect(&w, SIGNAL(pressitem(int, int)), &w2 ,SLOT(pressitemslot(int, int)));
+
     QString appdir(a.applicationDirPath());
-    qDebug() << "DirApp: " << appdir;
-    QMediaPlayer *player = new QMediaPlayer;
-    //player->setMedia(QUrl::fromLocalFile(QDir::toNativeSeparators("mp3/Fail.mp3")));
-    //player->setMedia(QUrl::fromLocalFile("mp3/Fail.mp3"));
+//    qDebug() << "DirApp: " << appdir;
     QDir x;
-    //x = QDir::​current();
     QString path;
     path = x.currentPath();
-    qDebug() << path;
-    //player->setMedia(QUrl::fromLocalFile(path + "/mp3/Success.mp3"));
-    //player->setVolume(100);
-    player->play();
-    //QSound::play("mp3/Fail.mp3");
-
     return a.exec();
 }

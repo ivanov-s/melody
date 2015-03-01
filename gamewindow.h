@@ -11,6 +11,10 @@ class GameWindow : public QMainWindow
 {
     Q_OBJECT
 
+public slots:
+    void myslot(QString);
+    void pressitemslot(int, int);
+
 public:
     explicit GameWindow(QWidget *parent = 0);
     ~GameWindow();

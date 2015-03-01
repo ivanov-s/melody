@@ -15,6 +15,11 @@ class MainWindow : public QMainWindow
 public slots:
     void opendir();
     void myslot();
+
+signals:
+    void mysignal(QString);
+    void pressitem(int,int);
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
